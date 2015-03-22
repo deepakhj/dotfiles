@@ -7,6 +7,11 @@ source /usr/local/share/zsh/site-functions/_aws
 # JAVA
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
+# DOCKER
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/deepak/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -90,6 +95,14 @@ alias s='ssh'
 # set java home aliases
 alias setjdk17='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setjdk18='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+
+# skout aliases
+alias skout_rest_start="MAVEN_OPTS='-Xms256m -Xmx6g -XX:MaxPermSize=512m -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5007' sh -c 'nohup mvn tomcat7:run -f ~/Documents/workspace/Yggdrasil/rest/pom.xml > /tmp/skout_rest.log &'"
+alias skout_www_start="MAVEN_OPTS='-Xms256m -Xmx6g -XX:MaxPermSize=512m -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5006' sh -c 'nohup mvn tomcat7:run -f ~/Documents/workspace/Yggdrasil/webapp/pom.xml > /tmp/skout_www.log &'"
+alias skout_start="skout_rest_start; skout_www_start"
+alias skout_www_shutdown="pkill -f .*webapp/pom.xml"
+alias skout_rest_shutdown="pkill -f .*rest/pom.xml"
+alias skout_shutdown="skout_rest_shutdown; skout_www_shutdown"
 
 alias rb=rbenv
 alias be="bundle exec"
