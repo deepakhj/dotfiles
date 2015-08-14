@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/deepak/dev/skoutrepo/skout-profile/spec/fixtures/modules'
 let g:netrw_dirhist_2='/Users/deepak/dev/skoutrepo/skout-profile/manifests/sensu'
 let g:netrw_dirhist_3='/Users/deepak/dev/skoutrepo/skout-profile/manifests'
+let g:netrw_dirhist_4='/Users/deepak/dev/skoutrepo/puppet-hieradata'
+let g:netrw_dirhist_5='/Users/deepak/dev/controlrepo/.git/hooks'
+let g:netrw_dirhist_6='/Users/deepak/dev/controlrepo/.git'
+let g:netrw_dirhist_7='/Users/deepak/dev/controlrepo/dist/profile/manifests/tomcat'
+let g:netrw_dirhist_8='/Users/deepak/target'
+let g:netrw_dirhist_9='/Users/deepak/dev/controlrepo/dist/profile/manifests/tomcat'
